@@ -1,0 +1,6 @@
+@GoogleDriver.API_HostAddress = http://localhost:5202
+
+GET {{GoogleDriver.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
