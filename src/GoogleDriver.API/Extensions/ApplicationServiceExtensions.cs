@@ -1,5 +1,9 @@
 ﻿using GoogleDriver.API.Data;
 using GoogleDriver.API.Errors;
+using GoogleDriver.API.SeedWorks;
+using GoogleDriver.API.SeedWorks.Interface;
+using GoogleDriver.API.Services;
+using GoogleDriver.API.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,9 +13,9 @@ public static class ApplicationServiceExtensions
 {
     public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration configuration)
     {
-        //services.AddScoped<IUnitOfWork, UnitOfWork>();
-        //services.AddScoped<ITokenService, TokenService>();
-        //services.AddScoped<IGoogleDriveService, GoogleDriveService>();
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
+        services.AddScoped<ITokenService, TokenService>();
+        services.AddScoped<IGoogleDriverService, GoogleDriverService>();
 
         services.AddDbContext<ApplicationDbContext>(options =>
         {
